@@ -53,7 +53,9 @@ export function createServer() {
 
     // No webhook configured — for now, accept the data and respond with success.
     console.log("Received lead:", payload);
-    return res.status(200).json({ message: "Received (no webhook configured)" });
+    return res
+      .status(200)
+      .json({ message: "Received (no webhook configured)" });
   });
 
   return app;

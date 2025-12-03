@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
+const LOGO_URL =
+  "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
 
 export default function Index() {
   const [submitting, setSubmitting] = useState(false);
@@ -10,12 +11,13 @@ export default function Index() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "EcoNova Solutions — Étude gratuite & solutions énergétiques";
+    document.title =
+      "EcoNova Solutions — Étude gratuite & solutions énergétiques";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
       meta.setAttribute(
         "content",
-        "EcoNova Solutions — Étude gratuite pour solutions énergétiques durables : pompes à chaleur, panneaux solaires, isolation, bornes de recharge. Recevez une étude personnalisée."
+        "EcoNova Solutions — Étude gratuite pour solutions énergétiques durables : pompes à chaleur, panneaux solaires, isolation, bornes de recharge. Recevez une étude personnalisée.",
       );
     } else {
       const m = document.createElement("meta");
@@ -91,18 +93,30 @@ export default function Index() {
 
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
               <li className="flex items-start gap-3">
-                <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground">✓</span>
-                <span className="text-slate-700">Audit gratuit et sans engagement</span>
+                <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground">
+                  ✓
+                </span>
+                <span className="text-slate-700">
+                  Audit gratuit et sans engagement
+                </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground">✓</span>
-                <span className="text-slate-700">Financement et aides disponibles</span>
+                <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground">
+                  ✓
+                </span>
+                <span className="text-slate-700">
+                  Financement et aides disponibles
+                </span>
               </li>
             </ul>
 
             <div className="mt-8">
               <button
-                onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("lead-form")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="inline-flex items-center gap-3 rounded-md bg-primary px-5 py-3 text-white font-semibold shadow hover:opacity-95"
               >
                 Recevoir mon étude gratuite maintenant
@@ -113,33 +127,66 @@ export default function Index() {
           <div>
             <div className="bg-white border border-border rounded-lg p-6 shadow">
               {!sent ? (
-                <form id="lead-form" onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  id="lead-form"
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Nom complet</span>
-                      <input data-field="name" name="name" required className="mt-1 block w-full rounded-md border px-3 py-2" />
+                      <span className="text-sm font-medium text-slate-700">
+                        Nom complet
+                      </span>
+                      <input
+                        data-field="name"
+                        name="name"
+                        required
+                        className="mt-1 block w-full rounded-md border px-3 py-2"
+                      />
                     </label>
 
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Email</span>
-                      <input data-field="email" name="email" type="email" required className="mt-1 block w-full rounded-md border px-3 py-2" />
+                      <span className="text-sm font-medium text-slate-700">
+                        Email
+                      </span>
+                      <input
+                        data-field="email"
+                        name="email"
+                        type="email"
+                        required
+                        className="mt-1 block w-full rounded-md border px-3 py-2"
+                      />
                     </label>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Téléphone</span>
-                      <input data-field="phone" name="phone" className="mt-1 block w-full rounded-md border px-3 py-2" />
+                      <span className="text-sm font-medium text-slate-700">
+                        Téléphone
+                      </span>
+                      <input
+                        data-field="phone"
+                        name="phone"
+                        className="mt-1 block w-full rounded-md border px-3 py-2"
+                      />
                     </label>
 
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Adresse</span>
-                      <input data-field="address" name="address" className="mt-1 block w-full rounded-md border px-3 py-2" />
+                      <span className="text-sm font-medium text-slate-700">
+                        Adresse
+                      </span>
+                      <input
+                        data-field="address"
+                        name="address"
+                        className="mt-1 block w-full rounded-md border px-3 py-2"
+                      />
                     </label>
                   </div>
 
                   <div>
-                    <span className="text-sm font-medium text-slate-700">Type de projet (cochez tout ce qui s'applique)</span>
+                    <span className="text-sm font-medium text-slate-700">
+                      Type de projet (cochez tout ce qui s'applique)
+                    </span>
                     <div className="mt-2 grid grid-cols-2 gap-2">
                       {[
                         "Pompe à chaleur",
@@ -149,8 +196,18 @@ export default function Index() {
                         "Borne de recharge",
                         "Autre",
                       ].map((t) => (
-                        <label key={t} className="inline-flex items-center gap-2 text-sm">
-                          <input data-field={`projectType-${t}`} data-type="projectType" name="projectType" type="checkbox" value={t} className="h-4 w-4" />
+                        <label
+                          key={t}
+                          className="inline-flex items-center gap-2 text-sm"
+                        >
+                          <input
+                            data-field={`projectType-${t}`}
+                            data-type="projectType"
+                            name="projectType"
+                            type="checkbox"
+                            value={t}
+                            className="h-4 w-4"
+                          />
                           <span>{t}</span>
                         </label>
                       ))}
@@ -159,8 +216,15 @@ export default function Index() {
 
                   <div>
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Message (optionnel)</span>
-                      <textarea data-field="message" name="message" rows={3} className="mt-1 block w-full rounded-md border px-3 py-2"></textarea>
+                      <span className="text-sm font-medium text-slate-700">
+                        Message (optionnel)
+                      </span>
+                      <textarea
+                        data-field="message"
+                        name="message"
+                        rows={3}
+                        className="mt-1 block w-full rounded-md border px-3 py-2"
+                      ></textarea>
                     </label>
                   </div>
 
@@ -169,26 +233,52 @@ export default function Index() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <button type="submit" disabled={submitting} className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-white font-semibold">
-                      {submitting ? "Envoi…" : "Recevoir mon étude gratuite maintenant"}
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-white font-semibold"
+                    >
+                      {submitting
+                        ? "Envoi…"
+                        : "Recevoir mon étude gratuite maintenant"}
                     </button>
-                    <button type="button" onClick={() => (document.getElementById("lead-form") as HTMLFormElement)?.reset()} className="text-sm text-slate-600">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        (
+                          document.getElementById(
+                            "lead-form",
+                          ) as HTMLFormElement
+                        )?.reset()
+                      }
+                      className="text-sm text-slate-600"
+                    >
                       Réinitialiser
                     </button>
                   </div>
 
-                  {error && <div className="text-sm text-destructive mt-2">{error}</div>}
+                  {error && (
+                    <div className="text-sm text-destructive mt-2">{error}</div>
+                  )}
                 </form>
               ) : (
                 <div className="text-center">
                   <h3 className="text-xl font-semibold">Merci !</h3>
-                  <p className="mt-2 text-slate-700">Votre demande a bien été envoyée. Nous reviendrons vers vous sous 48h ouvrés.</p>
-                  <p className="mt-2 text-sm text-slate-600">Vos données restent strictement confidentielles (RGPD).</p>
+                  <p className="mt-2 text-slate-700">
+                    Votre demande a bien été envoyée. Nous reviendrons vers vous
+                    sous 48h ouvrés.
+                  </p>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Vos données restent strictement confidentielles (RGPD).
+                  </p>
                 </div>
               )}
             </div>
 
-            <div className="mt-4 text-xs text-slate-500">Nous pouvons vous aider avec les aides et financements disponibles.</div>
+            <div className="mt-4 text-xs text-slate-500">
+              Nous pouvons vous aider avec les aides et financements
+              disponibles.
+            </div>
           </div>
         </section>
 
@@ -221,7 +311,10 @@ export default function Index() {
                 a: "Nous utilisons des équipements de marques reconnues et adaptés à chaque projet (pompes à chaleur, panneaux solaires, systèmes de stockage...).",
               },
             ].map((item) => (
-              <div key={item.q} className="bg-white border border-border rounded-md p-4">
+              <div
+                key={item.q}
+                className="bg-white border border-border rounded-md p-4"
+              >
                 <h3 className="font-medium text-slate-800">{item.q}</h3>
                 <p className="mt-2 text-slate-600">{item.a}</p>
               </div>

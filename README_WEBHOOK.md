@@ -7,4 +7,5 @@ Example (in .env):
 WEBHOOK_URL=https://hooks.example.com/your-webhook
 
 Security:
+
 - Do not commit secrets. Use the platform to set environment variables when deploying.

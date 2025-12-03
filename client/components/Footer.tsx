@@ -5,8 +5,14 @@ export default function Footer({ logoSrc }: { logoSrc?: string }) {
     <footer className="bg-white border-t mt-12">
       <div className="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
-          {logoSrc ? <img src={logoSrc} alt="EcoNova Solutions" className="h-12 mb-3" /> : <div className="h-10 w-10 bg-primary rounded-full mb-3" />}
-          <p className="text-sm text-slate-700">Entreprise spécialisée dans les solutions énergétiques durables.</p>
+          {logoSrc ? (
+            <img src={logoSrc} alt="EcoNova Solutions" className="h-12 mb-3" />
+          ) : (
+            <div className="h-10 w-10 bg-primary rounded-full mb-3" />
+          )}
+          <p className="text-sm text-slate-700">
+            Entreprise spécialisée dans les solutions énergétiques durables.
+          </p>
         </div>
 
         <div>
@@ -21,7 +27,9 @@ export default function Footer({ logoSrc }: { logoSrc?: string }) {
         <div>
           <h4 className="font-semibold mb-2">Adresse</h4>
           <p className="text-sm text-slate-600">Paris, France</p>
-          <p className="text-sm text-slate-600 mt-3">© {new Date().getFullYear()} EcoNova Solutions</p>
+          <p className="text-sm text-slate-600 mt-3">
+            © {new Date().getFullYear()} EcoNova Solutions
+          </p>
         </div>
       </div>
     </footer>
