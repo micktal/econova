@@ -1,62 +1,236 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+const LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
-    fetchDemo();
+    document.title = "EcoNova Solutions — Étude gratuite & solutions énergétiques";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute(
+        "content",
+        "EcoNova Solutions — Étude gratuite pour solutions énergétiques durables : pompes à chaleur, panneaux solaires, isolation, bornes de recharge. Recevez une étude personnalisée."
+      );
+    } else {
+      const m = document.createElement("meta");
+      m.name = "description";
+      m.content =
+        "EcoNova Solutions — Étude gratuite pour solutions énergétiques durables : pompes à chaleur, panneaux solaires, isolation, bornes de recharge. Recevez une étude personnalisée.";
+      document.head.appendChild(m);
+    }
   }, []);
 
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Collect projectType checkboxes
+    const projectTypes: string[] = [];
+    form.querySelectorAll('input[name="projectType"]:checked').forEach((el) => {
+      const input = el as HTMLInputElement;
+      projectTypes.push(input.value);
+    });
+
+    const payload = {
+      name: formData.get("name") || "",
+      email: formData.get("email") || "",
+      phone: formData.get("phone") || "",
+      address: formData.get("address") || "",
+      message: formData.get("message") || "",
+      projectTypes,
+      source: "landing-ecovona",
+    };
+
     try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
+      const res = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || "Erreur lors de l'envoi");
+      }
+
+      setSent(true);
+      form.reset();
+    } catch (err: any) {
+      console.error(err);
+      setError(err.message || "Erreur réseau");
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-slate-50">
+      <Header logoSrc={LOGO_URL} />
+
+      <main className="container mx-auto flex-1 py-12">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+              EcoNova Solutions
+            </h1>
+            <p className="mt-4 text-lg text-slate-700 max-w-xl">
+              Solutions énergétiques durables, installations sur-mesure et aides
+              disponibles. Recevez une étude gratuite et personnalisée pour
+              optimiser votre consommation et réduire vos factures.
+            </p>
+
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
+              <li className="flex items-start gap-3">
+                <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground">✓</span>
+                <span className="text-slate-700">Audit gratuit et sans engagement</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground">✓</span>
+                <span className="text-slate-700">Financement et aides disponibles</span>
+              </li>
+            </ul>
+
+            <div className="mt-8">
+              <button
+                onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex items-center gap-3 rounded-md bg-primary px-5 py-3 text-white font-semibold shadow hover:opacity-95"
+              >
+                Recevoir mon étude gratuite maintenant
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div className="bg-white border border-border rounded-lg p-6 shadow">
+              {!sent ? (
+                <form id="lead-form" onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label className="flex flex-col">
+                      <span className="text-sm font-medium text-slate-700">Nom complet</span>
+                      <input data-field="name" name="name" required className="mt-1 block w-full rounded-md border px-3 py-2" />
+                    </label>
+
+                    <label className="flex flex-col">
+                      <span className="text-sm font-medium text-slate-700">Email</span>
+                      <input data-field="email" name="email" type="email" required className="mt-1 block w-full rounded-md border px-3 py-2" />
+                    </label>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label className="flex flex-col">
+                      <span className="text-sm font-medium text-slate-700">Téléphone</span>
+                      <input data-field="phone" name="phone" className="mt-1 block w-full rounded-md border px-3 py-2" />
+                    </label>
+
+                    <label className="flex flex-col">
+                      <span className="text-sm font-medium text-slate-700">Adresse</span>
+                      <input data-field="address" name="address" className="mt-1 block w-full rounded-md border px-3 py-2" />
+                    </label>
+                  </div>
+
+                  <div>
+                    <span className="text-sm font-medium text-slate-700">Type de projet (cochez tout ce qui s'applique)</span>
+                    <div className="mt-2 grid grid-cols-2 gap-2">
+                      {[
+                        "Pompe à chaleur",
+                        "Panneaux solaires",
+                        "Isolation",
+                        "Chauffe-eau solaire",
+                        "Borne de recharge",
+                        "Autre",
+                      ].map((t) => (
+                        <label key={t} className="inline-flex items-center gap-2 text-sm">
+                          <input data-field={`projectType-${t}`} data-type="projectType" name="projectType" type="checkbox" value={t} className="h-4 w-4" />
+                          <span>{t}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="flex flex-col">
+                      <span className="text-sm font-medium text-slate-700">Message (optionnel)</span>
+                      <textarea data-field="message" name="message" rows={3} className="mt-1 block w-full rounded-md border px-3 py-2"></textarea>
+                    </label>
+                  </div>
+
+                  <div className="text-sm text-slate-600">
+                    Vos données restent strictement confidentielles (RGPD).
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <button type="submit" disabled={submitting} className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-white font-semibold">
+                      {submitting ? "Envoi…" : "Recevoir mon étude gratuite maintenant"}
+                    </button>
+                    <button type="button" onClick={() => (document.getElementById("lead-form") as HTMLFormElement)?.reset()} className="text-sm text-slate-600">
+                      Réinitialiser
+                    </button>
+                  </div>
+
+                  {error && <div className="text-sm text-destructive mt-2">{error}</div>}
+                </form>
+              ) : (
+                <div className="text-center">
+                  <h3 className="text-xl font-semibold">Merci !</h3>
+                  <p className="mt-2 text-slate-700">Votre demande a bien été envoyée. Nous reviendrons vers vous sous 48h ouvrés.</p>
+                  <p className="mt-2 text-sm text-slate-600">Vos données restent strictement confidentielles (RGPD).</p>
+                </div>
+              )}
+            </div>
+
+            <div className="mt-4 text-xs text-slate-500">Nous pouvons vous aider avec les aides et financements disponibles.</div>
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold">Foire aux questions</h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              {
+                q: "Comment se déroule l'étude gratuite ?",
+                a: "Un conseiller vous contacte pour préciser votre projet, puis nous réalisons un diagnostic et vous envoyons une proposition détaillée.",
+              },
+              {
+                q: "Quels sont les délais d'installation ?",
+                a: "Les délais varient selon le projet et les autorisations, généralement entre 2 et 8 semaines après validation du devis.",
+              },
+              {
+                q: "Est-ce que je suis éligible aux aides ?",
+                a: "Nous évaluons votre éligibilité lors de l'étude et vous accompagnons dans les démarches pour obtenir les aides disponibles.",
+              },
+              {
+                q: "Que se passe-t-il après l’envoi du formulaire ?",
+                a: "Un conseiller vous contacte pour fixer un rendez-vous et préciser les informations nécessaires pour l'étude.",
+              },
+              {
+                q: "L’entreprise est-elle certifiée ?",
+                a: "Oui, EcoNova Solutions travaille avec des partenaires certifiés RGE et des installateurs qualifiés.",
+              },
+              {
+                q: "Quels produits sont utilisés ?",
+                a: "Nous utilisons des équipements de marques reconnues et adaptés à chaque projet (pompes à chaleur, panneaux solaires, systèmes de stockage...).",
+              },
+            ].map((item) => (
+              <div key={item.q} className="bg-white border border-border rounded-md p-4">
+                <h3 className="font-medium text-slate-800">{item.q}</h3>
+                <p className="mt-2 text-slate-600">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <Footer logoSrc={LOGO_URL} />
     </div>
   );
 }
