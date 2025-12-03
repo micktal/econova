@@ -8,7 +8,7 @@
 @layer base {
   /**
    * EcoNova theme
-  */
+   */
   :root {
     /* Primary: Eco green */
     --background: 140 30% 98%;
@@ -79,6 +79,7 @@
     --border: 210 20% 20%;
     --input: 210 20% 20%;
     --ring: 145 60% 45%;
+
     --sidebar-background: 210 20% 12%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 145 60% 30%;
@@ -91,9 +92,9 @@
 }
 
 @layer base {
+  /* FIX: Tailwind cannot @apply border-border → use CSS var */
   * {
-    /* FIX: replaced invalid Tailwind class */
-    @apply border-gray-200;
+    border-color: hsl(var(--border));
   }
 
   html,
@@ -112,7 +113,11 @@
       Roboto,
       "Helvetica Neue",
       Arial;
-    @apply bg-background text-foreground;
+
+    /* FIX: Tailwind cannot @apply bg-background → use CSS var */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
