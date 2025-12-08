@@ -3,8 +3,12 @@
   "private": true,
   "type": "module",
   "pkg": {
-    "assets": ["dist/spa/*"],
-    "scripts": ["dist/server/**/*.js"]
+    "assets": [
+      "dist/spa/*"
+    ],
+    "scripts": [
+      "dist/server/**/*.js"
+    ]
   },
   "scripts": {
     "dev": "vite",
@@ -19,6 +23,7 @@
   "dependencies": {
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "react-router-dom": "^7.10.1",
     "zod": "^3.25.76"
   },
   "devDependencies": {
