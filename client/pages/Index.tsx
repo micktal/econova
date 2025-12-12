@@ -12,18 +12,17 @@ export default function Index() {
 
   useEffect(() => {
     document.title = "EcoNova Solutions — Sustainable Energy Solutions";
-    const meta = document.querySelector('meta[name="description"]');
-    const description =
-      "EcoNova Solutions provides tailored sustainable energy solutions. Get contacted by an advisor to discuss your project: heat pumps, solar panels, insulation, EV charging.";
 
-    if (meta) {
-      meta.setAttribute("content", description);
-    } else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = description;
-      document.head.appendChild(m);
+    const description =
+      "EcoNova Solutions provides tailor-made sustainable energy solutions. Get contacted by an expert advisor to discuss heat pumps, solar panels, insulation, and EV charging.";
+
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
     }
+    meta.setAttribute("content", description);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -40,11 +39,11 @@ export default function Index() {
     });
 
     const payload = {
-      name: formData.get("name") || "",
-      email: formData.get("email") || "",
-      phone: formData.get("phone") || "",
-      address: formData.get("address") || "",
-      message: formData.get("message") || "",
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      phone: String(formData.get("phone") || ""),
+      address: String(formData.get("address") || ""),
+      message: String(formData.get("message") || ""),
       projectTypes,
       source: "landing-econova",
     };
@@ -57,14 +56,13 @@ export default function Index() {
       });
 
       if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || "Submission error");
+        throw new Error("Submission failed. Please try again.");
       }
 
       setSent(true);
       form.reset();
     } catch (err: any) {
-      setError(err.message || "Network error");
+      setError(err.message || "Network error. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -75,18 +73,20 @@ export default function Index() {
       <Header logoSrc={LOGO_URL} />
 
       <main className="container mx-auto flex-1 py-12">
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          {/* LEFT CONTENT */}
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
               EcoNova Solutions
             </h1>
 
             <p className="mt-4 text-lg text-slate-700 max-w-xl">
-              Sustainable and tailor-made energy solutions. Leave your details
-              and get contacted by one of our advisors to discuss your project.
+              Sustainable, tailor-made energy solutions.
+              Leave your details and get contacted by one of our expert advisors
+              to discuss your project.
             </p>
 
-            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg">
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg">
               <li className="flex items-start gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   ✓
@@ -114,11 +114,12 @@ export default function Index() {
                 }
                 className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-white font-semibold shadow hover:opacity-95"
               >
-                Get contacted
+                Get contacted by an advisor
               </button>
             </div>
           </div>
 
+          {/* FORM */}
           <div>
             <div className="bg-white border border-border rounded-lg p-6 shadow">
               {!sent ? (
@@ -187,7 +188,10 @@ export default function Index() {
                         "EV charging station",
                         "Other",
                       ].map((t) => (
-                        <label key={t} className="flex items-center gap-2 text-sm">
+                        <label
+                          key={t}
+                          className="flex items-center gap-2 text-sm"
+                        >
                           <input
                             type="checkbox"
                             name="projectType"
@@ -212,7 +216,7 @@ export default function Index() {
                   </label>
 
                   <p className="text-sm text-slate-600">
-                    Your data is kept strictly confidential (GDPR compliant).
+                    Your data is strictly confidential and GDPR compliant.
                   </p>
 
                   <button
@@ -231,15 +235,15 @@ export default function Index() {
                 <div className="text-center">
                   <h3 className="text-xl font-semibold">Thank you</h3>
                   <p className="mt-2 text-slate-700">
-                    Your request has been sent successfully. One of our advisors
-                    will contact you shortly.
+                    Your request has been successfully sent.
+                    One of our advisors will contact you shortly.
                   </p>
                 </div>
               )}
             </div>
 
             <p className="mt-4 text-xs text-slate-500">
-              We assist you with available financial incentives and funding.
+              We assist you with available incentives, subsidies, and financing.
             </p>
           </div>
         </section>
