@@ -1,6 +1,12 @@
 import { Resend } from "resend";
+import { createClient } from "@supabase/supabase-js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
 
 /* ===== Lead routing ===== */
 const ROUTING_BY_PROJECT = {
@@ -42,6 +48,28 @@ export async function handler(event) {
     } = data;
 
     const recipient = getRecipientEmail(projectTypes);
+
+    /* ===== SAVE TO SUPABASE ===== */
+    const { error: supabaseError } = await supabase.from("leads").insert([
+      {
+        name,
+        email,
+        phone,
+        address,
+        project_types: projectTypes,
+        message,
+        source,
+        created_at: new Date().toISOString(),
+      },
+    ]);
+
+    if (supabaseError) {
+      console.error("Supabase error:", supabaseError);
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: "Erreur lors de l'enregistrement" }),
+      };
+    }
 
     /* ===== INTERNAL LEAD EMAIL ===== */
     const internalContent = `
