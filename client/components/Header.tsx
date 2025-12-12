@@ -10,7 +10,7 @@ export default function Header({ logoSrc }: { logoSrc?: string }) {
             <img
               src={logoSrc}
               alt="EcoNova Solutions"
-              className="h-23 w-auto"
+              className="h-22 w-auto"
             />
           ) : (
             <div className="h-30 w-30 rounded-full bg-primary" />
