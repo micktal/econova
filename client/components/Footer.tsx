@@ -6,9 +6,9 @@ export default function Footer({ logoSrc }: { logoSrc?: string }) {
       <div className="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           {logoSrc ? (
-            <img src={logoSrc} alt="EcoNova Solutions" className="h-12 mb-3" />
+            <img src={logoSrc} alt="EcoNova Solutions" className="h-20 mb-4" />
           ) : (
-            <div className="h-10 w-10 bg-primary rounded-full mb-3" />
+            <div className="h-16 w-16 bg-primary rounded-full mb-4" />
           )}
           <p className="text-sm text-slate-700">
             Entreprise spécialisée dans les solutions énergétiques durables.
