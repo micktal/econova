@@ -6,7 +6,12 @@ export default function Footer({ logoSrc }: { logoSrc?: string }) {
       <div className="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           {logoSrc ? (
-            <img src={logoSrc} alt="EcoNova Solutions" className="h-20 mb-4" />
+            <img
+              src={logoSrc}
+              alt="EcoNova Solutions"
+              className="h-20 object-cover object-center mb-4"
+              style={{ aspectRatio: "4/1" }}
+            />
           ) : (
             <div className="h-16 w-16 bg-primary rounded-full mb-4" />
           )}
