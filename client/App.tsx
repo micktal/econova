@@ -39,15 +39,27 @@ const App = () => (
 declare global {
   interface Window {
     __reactAppRoot?: any;
+    __reactAppInitialized?: boolean;
   }
 }
 
-const rootElement = document.getElementById("root");
+// Defer initialization to ensure DOM is ready and avoid double-initialization
+Promise.resolve().then(() => {
+  if (window.__reactAppInitialized) return;
 
-if (rootElement) {
-  // Create root only once, reuse on HMR
+  const rootElement = document.getElementById("root");
+  if (!rootElement) return;
+
+  window.__reactAppInitialized = true;
+
   if (!window.__reactAppRoot) {
-    window.__reactAppRoot = createRoot(rootElement);
+    try {
+      window.__reactAppRoot = createRoot(rootElement);
+    } catch (e) {
+      console.error("Failed to create React root:", e);
+      return;
+    }
   }
+
   window.__reactAppRoot.render(<App />);
-}
+});
