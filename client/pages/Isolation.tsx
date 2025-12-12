@@ -132,25 +132,25 @@ export default function Isolation() {
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Isolation des combles (perdus ou aménagés)</h3>
               <p className="text-slate-600 text-sm">
-                👉 La solution la plus rentable et la plus rapide à mettre en place.
+                La solution la plus rentable et la plus rapide à mettre en place.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Isolation des murs (intérieure ou extérieure)</h3>
               <p className="text-slate-600 text-sm">
-                👉 Réduction majeure des déperditions thermiques.
+                Réduction majeure des déperditions thermiques.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Isolation des planchers bas</h3>
               <p className="text-slate-600 text-sm">
-                👉 Améliore le confort et limite les remontées de froid.
+                Améliore le confort et limite les remontées de froid.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Isolation globale du logement</h3>
               <p className="text-slate-600 text-sm">
-                👉 Solution complète pour maximiser les économies d'énergie.
+                Solution complète pour maximiser les économies d'énergie.
               </p>
             </div>
           </div>

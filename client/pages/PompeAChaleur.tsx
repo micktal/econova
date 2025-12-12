@@ -132,25 +132,25 @@ export default function PompeAChaleur() {
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air / air</h3>
               <p className="text-slate-600 text-sm">
-                👉 Chauffage + climatisation, installation rapide.
+                Chauffage + climatisation, installation rapide.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air / eau</h3>
               <p className="text-slate-600 text-sm">
-                👉 Alimente radiateurs ou plancher chauffant, très répandue.
+                Alimente radiateurs ou plancher chauffant, très répandue.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur géothermique</h3>
               <p className="text-slate-600 text-sm">
-                👉 Performance maximale, idéale pour projets globaux.
+                Performance maximale, idéale pour projets globaux.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur hybride</h3>
               <p className="text-slate-600 text-sm">
-                👉 Combine PAC + chaudière existante pour plus de flexibilité.
+                Combine PAC + chaudière existante pour plus de flexibilité.
               </p>
             </div>
           </div>

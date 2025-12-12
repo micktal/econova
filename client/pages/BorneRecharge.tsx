@@ -132,25 +132,25 @@ export default function BorneRecharge() {
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Borne de recharge résidentielle (maison individuelle)</h3>
               <p className="text-slate-600 text-sm">
-                👉 Recharge simple, rapide et sécurisée à domicile.
+                Recharge simple, rapide et sécurisée à domicile.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Borne de recharge en copropriété</h3>
               <p className="text-slate-600 text-sm">
-                👉 Solution adaptée avec démarches administratives accompagnées.
+                Solution adaptée avec démarches administratives accompagnées.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Borne pour entreprise ou parking privé</h3>
               <p className="text-slate-600 text-sm">
-                👉 Recharge pour flotte de véhicules ou salariés.
+                Recharge pour flotte de véhicules ou salariés.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Puissance 7 kW / 11 kW / 22 kW</h3>
               <p className="text-slate-600 text-sm">
-                👉 Choix selon votre véhicule et votre installation électrique.
+                Choix selon votre véhicule et votre installation électrique.
               </p>
             </div>
           </div>

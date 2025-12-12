@@ -99,7 +99,7 @@ Merci pour votre demande d’étude gratuite auprès d’EcoNova Solutions.
 - Projet : ${projectTypes.join(", ") || "—"}
 - Téléphone : ${phone || "—"}
 
-👉 Prochaine étape
+Prochaine étape
 Un conseiller EcoNova Solutions vous contactera sous 48h ouvrées
 afin de préciser votre projet et vérifier votre éligibilité aux aides.
 
