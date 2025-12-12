@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import PompeAChaleur from "./pages/PompeAChaleur";
 import PanneauxSolaires from "./pages/PanneauxSolaires";
 import Isolation from "./pages/Isolation";
+import BorneRecharge from "./pages/BorneRecharge";
 import NotFound from "./pages/NotFound";
 
 let isInitialized = false;
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/pompe-a-chaleur" element={<PompeAChaleur />} />
           <Route path="/panneaux-solaires" element={<PanneauxSolaires />} />
           <Route path="/isolation" element={<Isolation />} />
+          <Route path="/borne-recharge" element={<BorneRecharge />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
