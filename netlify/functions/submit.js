@@ -4,11 +4,11 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 /* ===== Lead routing ===== */
 const ROUTING_BY_PROJECT = {
-  "Heat pump": "pac@econova.fr",
-  "Solar panels": "solar@econova.fr",
-  "Solar water heater": "solar@econova.fr",
-  "Insulation": "isolation@econova.fr",
-  "EV charging station": "ev@econova.fr",
+  "Pompe à chaleur": "pac@econova.fr",
+  "Panneaux solaires": "solar@econova.fr",
+  "Chauffe-eau solaire": "solar@econova.fr",
+  "Isolation": "isolation@econova.fr",
+  "Borne de recharge": "ev@econova.fr",
 };
 
 const DEFAULT_EMAIL = "leads@econova.fr";
@@ -110,7 +110,7 @@ Sustainable Energy Experts
     console.error("Submit error:", err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Server error" }),
+      body: JSON.stringify({ error: "Erreur serveur" }),
     };
   }
 }
