@@ -6,7 +6,9 @@ interface AdminAuthContextType {
   logout: () => void;
 }
 
-const AdminAuthContext = createContext<AdminAuthContextType | undefined>(undefined);
+const AdminAuthContext = createContext<AdminAuthContextType | undefined>(
+  undefined,
+);
 
 export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

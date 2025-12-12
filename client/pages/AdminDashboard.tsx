@@ -5,7 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
   "https://wkdupbqnobijzmqohpnr.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndrZHVwYnFub2JpanptcW9ocG5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NjMwMjAsImV4cCI6MjA4MTEzOTAyMH0.YswYQcR56oM1S-HHkrnOxUxqzz_VbPPT2eXaDtd1bN8"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndrZHVwYnFub2JpanptcW9ocG5yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1NjMwMjAsImV4cCI6MjA4MTEzOTAyMH0.YswYQcR56oM1S-HHkrnOxUxqzz_VbPPT2eXaDtd1bN8",
 );
 
 interface Lead {
@@ -170,7 +170,9 @@ export default function AdminDashboard() {
         {/* Table */}
         <div className="bg-white rounded-lg shadow overflow-hidden">
           {loading ? (
-            <div className="p-8 text-center text-slate-600">Loading leads...</div>
+            <div className="p-8 text-center text-slate-600">
+              Loading leads...
+            </div>
           ) : leads.length === 0 ? (
             <div className="p-8 text-center text-slate-600">
               No leads found for this filter.
@@ -233,8 +235,8 @@ export default function AdminDashboard() {
                             lead.status === "new"
                               ? "bg-blue-100 text-blue-800"
                               : lead.status === "contacted"
-                              ? "bg-yellow-100 text-yellow-800"
-                              : "bg-green-100 text-green-800"
+                                ? "bg-yellow-100 text-yellow-800"
+                                : "bg-green-100 text-green-800"
                           }`}
                         >
                           <option value="new">New</option>
