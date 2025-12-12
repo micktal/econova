@@ -35,15 +35,19 @@ const App = () => (
   </QueryClientProvider>
 );
 
-const rootElement = document.getElementById("root");
-
-// Only initialize once per page load, not on HMR updates
-if (rootElement && !(rootElement as any).__reactRootInitialized) {
-  (rootElement as any).__reactRootInitialized = true;
-  (rootElement as any).__reactRoot = createRoot(rootElement);
+// Use window to persist root across HMR
+declare global {
+  interface Window {
+    __reactAppRoot?: any;
+  }
 }
 
-// Always render latest App component (supports HMR)
+const rootElement = document.getElementById("root");
+
 if (rootElement) {
-  (rootElement as any).__reactRoot?.render(<App />);
+  // Create root only once, reuse on HMR
+  if (!window.__reactAppRoot) {
+    window.__reactAppRoot = createRoot(rootElement);
+  }
+  window.__reactAppRoot.render(<App />);
 }
