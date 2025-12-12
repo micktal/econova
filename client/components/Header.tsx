@@ -18,30 +18,30 @@ export default function Header({ logoSrc }: { logoSrc?: string }) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
-          <Link to="#" className="text-sm text-slate-700 hover:text-primary">
+          <a href="#services" className="text-sm text-slate-700 hover:text-primary">
             Services
-          </Link>
-          <Link to="#" className="text-sm text-slate-700 hover:text-primary">
+          </a>
+          <a href="#aides" className="text-sm text-slate-700 hover:text-primary">
             Aides & financements
-          </Link>
-          <Link to="#" className="text-sm text-slate-700 hover:text-primary">
+          </a>
+          <a href="#faq" className="text-sm text-slate-700 hover:text-primary">
             FAQ
-          </Link>
-          <Link
-            to="#lead-form"
-            className="text-sm font-semibold bg-primary text-white px-4 py-2 rounded-md"
+          </a>
+          <button
+            onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+            className="text-sm font-semibold bg-primary text-white px-4 py-2 rounded-md hover:opacity-95"
           >
             Recevoir mon étude
-          </Link>
+          </button>
         </nav>
 
         <div className="md:hidden">
-          <Link
-            to="#lead-form"
-            className="text-sm font-semibold bg-primary text-white px-3 py-2 rounded-md"
+          <button
+            onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+            className="text-sm font-semibold bg-primary text-white px-3 py-2 rounded-md hover:opacity-95"
           >
             Étude
-          </Link>
+          </button>
         </div>
       </div>
     </header>
