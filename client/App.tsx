@@ -12,27 +12,34 @@ import PanneauxSolaires from "./pages/PanneauxSolaires";
 import Isolation from "./pages/Isolation";
 import BorneRecharge from "./pages/BorneRecharge";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import { AdminAuthProvider } from "./context/AdminAuth";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/pompe-a-chaleur" element={<PompeAChaleur />} />
-          <Route path="/panneaux-solaires" element={<PanneauxSolaires />} />
-          <Route path="/isolation" element={<Isolation />} />
-          <Route path="/borne-recharge" element={<BorneRecharge />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <AdminAuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/pompe-a-chaleur" element={<PompeAChaleur />} />
+            <Route path="/panneaux-solaires" element={<PanneauxSolaires />} />
+            <Route path="/isolation" element={<Isolation />} />
+            <Route path="/borne-recharge" element={<BorneRecharge />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </AdminAuthProvider>
 );
 
 // Use window to persist root across HMR
