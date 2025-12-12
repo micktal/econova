@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Routing rules
+/* ===== Lead routing ===== */
 const ROUTING_BY_PROJECT = {
   "Heat pump": "pac@econova.fr",
   "Solar panels": "solar@econova.fr",
@@ -22,6 +22,7 @@ function getRecipientEmail(projectTypes = []) {
   return DEFAULT_EMAIL;
 }
 
+/* ===== Netlify function ===== */
 export async function handler(event) {
   try {
     if (event.httpMethod !== "POST") {
@@ -42,7 +43,8 @@ export async function handler(event) {
 
     const recipient = getRecipientEmail(projectTypes);
 
-    const content = `
+    /* ===== INTERNAL LEAD EMAIL ===== */
+    const internalContent = `
 NEW LEAD — EcoNova Solutions
 
 Name: ${name}
@@ -63,13 +65,47 @@ Received: ${new Date().toLocaleString("en-GB")}
       to: recipient,
       reply_to: email || undefined,
       subject: `🔥 New lead – ${projectTypes[0] || "Energy project"}`,
-      text: content,
+      text: internalContent,
     });
+
+    /* ===== AUTO-REPLY TO VISITOR ===== */
+    if (email) {
+      const visitorContent = `
+Hello ${name || ""},
+
+Thank you for contacting EcoNova Solutions.
+
+We have successfully received your request regarding:
+${projectTypes.length ? "- " + projectTypes.join("\n- ") : "- Energy project"}
+
+One of our advisors will contact you shortly to discuss your project and
+provide you with tailored solutions and available financial incentives.
+
+✔ No obligation
+✔ No spam
+✔ GDPR compliant
+
+If you have additional information to share, simply reply to this email.
+
+Kind regards,
+
+EcoNova Solutions
+Sustainable Energy Experts
+`;
+
+      await resend.emails.send({
+        from: process.env.FROM_EMAIL,
+        to: email,
+        subject: "✅ We received your request – EcoNova Solutions",
+        text: visitorContent,
+      });
+    }
 
     return {
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
+
   } catch (err) {
     console.error("Submit error:", err);
     return {
