@@ -10,7 +10,7 @@ const ROUTING_BY_PROJECT = {
   "Pompe à chaleur": "pac@econova.fr",
   "Panneaux solaires": "solar@econova.fr",
   "Chauffe-eau solaire": "solar@econova.fr",
-  "Isolation": "isolation@econova.fr",
+  Isolation: "isolation@econova.fr",
   "Borne de recharge": "ev@econova.fr",
 };
 
@@ -125,7 +125,6 @@ https://econovasolutions.fr
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
-
   } catch (error) {
     console.error("Lead processing error:", error);
     return {

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
+const LOGO_URL =
+  "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
 
 export default function Index() {
   const [submitting, setSubmitting] = useState(false);
@@ -10,7 +11,8 @@ export default function Index() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "EcoNova Solutions — Solutions énergétiques durables & expertise certifiée";
+    document.title =
+      "EcoNova Solutions — Solutions énergétiques durables & expertise certifiée";
 
     const description =
       "Solutions énergétiques durables adaptées à votre projet. Pompes à chaleur, panneaux solaires, isolation. Experts certifiés. Aides financières incluses.";
@@ -81,16 +83,22 @@ export default function Index() {
 
             <h2 className="mt-6 text-xl text-slate-700 leading-relaxed">
               Réduisez vos factures énergétiques avec des solutions sur-mesure.
-              Pompes à chaleur, panneaux solaires, isolation et bornes de recharge — soutenus par des professionnels certifiés.
+              Pompes à chaleur, panneaux solaires, isolation et bornes de
+              recharge — soutenus par des professionnels certifiés.
             </h2>
 
             <p className="mt-4 text-sm text-slate-600">
-              ✓ Partenaires certifiés  •  ✓ Aides financières disponibles  •  ✓ Sans engagement
+              ✓ Partenaires certifiés • ✓ Aides financières disponibles • ✓ Sans
+              engagement
             </p>
 
             <div className="mt-8 flex gap-4">
               <button
-                onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("lead-form")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="inline-flex items-center rounded-md bg-primary px-8 py-3 text-white font-semibold shadow hover:opacity-95"
               >
                 Être contacté par un conseiller énergétique
@@ -101,24 +109,34 @@ export default function Index() {
 
         {/* ========== VALUE PROPOSITION ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Pourquoi choisir EcoNova Solutions ?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Pourquoi choisir EcoNova Solutions ?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Évaluation gratuite et sans engagement</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Évaluation gratuite et sans engagement
+              </h3>
               <p className="text-slate-600 text-sm">
                 Un expert vous évalue rapidement et sans frais.
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Installations certifiées et conformes</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Installations certifiées et conformes
+              </h3>
               <p className="text-slate-600 text-sm">
-                Nous travaillons exclusivement avec des partenaires certifiés respectant les normes nationales.
+                Nous travaillons exclusivement avec des partenaires certifiés
+                respectant les normes nationales.
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Aides financières et subventions incluses</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Aides financières et subventions incluses
+              </h3>
               <p className="text-slate-600 text-sm">
-                Nous vous guidons pour accéder aux aides disponibles et réduire votre coût.
+                Nous vous guidons pour accéder aux aides disponibles et réduire
+                votre coût.
               </p>
             </div>
           </div>
@@ -126,42 +144,71 @@ export default function Index() {
 
         {/* ========== PROJECT TYPES ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Solutions adaptées à votre projet</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Solutions adaptées à votre projet
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
             {[
-              { title: "Pompes à chaleur", desc: "Réduisez les coûts de chauffage et améliorez le confort" },
-              { title: "Panneaux solaires", desc: "Produisez votre propre électricité propre" },
-              { title: "Isolation", desc: "Améliorez l'efficacité et réduisez les pertes énergétiques" },
-              { title: "Chauffe-eau solaire", desc: "Eau chaude avec énergie renouvelable" },
-              { title: "Bornes de recharge", desc: "Rechargez votre véhicule à la maison" },
+              {
+                title: "Pompes à chaleur",
+                desc: "Réduisez les coûts de chauffage et améliorez le confort",
+              },
+              {
+                title: "Panneaux solaires",
+                desc: "Produisez votre propre électricité propre",
+              },
+              {
+                title: "Isolation",
+                desc: "Améliorez l'efficacité et réduisez les pertes énergétiques",
+              },
+              {
+                title: "Chauffe-eau solaire",
+                desc: "Eau chaude avec énergie renouvelable",
+              },
+              {
+                title: "Bornes de recharge",
+                desc: "Rechargez votre véhicule à la maison",
+              },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white border border-border rounded-lg p-4">
+              <div
+                key={idx}
+                className="bg-white border border-border rounded-lg p-4"
+              >
                 <h3 className="font-semibold text-slate-900">{item.title}</h3>
                 <p className="text-sm text-slate-600 mt-2">{item.desc}</p>
               </div>
             ))}
           </div>
           <p className="mt-8 text-slate-600 max-w-2xl">
-            Vous ne savez pas quelle solution convient à votre habitation ? Notre conseiller vous guidera.
+            Vous ne savez pas quelle solution convient à votre habitation ?
+            Notre conseiller vous guidera.
           </p>
         </section>
 
         {/* ========== FORM SECTION INTRO ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Être contacté par un conseiller énergétique</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            Être contacté par un conseiller énergétique
+          </h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-            Remplissez le formulaire ci-dessous.
-            Un conseiller vous contactera pour discuter de votre projet et de votre éligibilité.
+            Remplissez le formulaire ci-dessous. Un conseiller vous contactera
+            pour discuter de votre projet et de votre éligibilité.
           </p>
 
           {/* FORM */}
           <div className="max-w-2xl">
             <div className="bg-white border border-border rounded-lg p-8 shadow">
               {!sent ? (
-                <form id="lead-form" onSubmit={handleSubmit} className="space-y-5">
+                <form
+                  id="lead-form"
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Nom complet *</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Nom complet *
+                      </span>
                       <input
                         name="name"
                         required
@@ -170,7 +217,9 @@ export default function Index() {
                     </label>
 
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Email *</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Email *
+                      </span>
                       <input
                         name="email"
                         type="email"
@@ -182,7 +231,9 @@ export default function Index() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Téléphone</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Téléphone
+                      </span>
                       <input
                         name="phone"
                         className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
@@ -190,7 +241,9 @@ export default function Index() {
                     </label>
 
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Adresse</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Adresse
+                      </span>
                       <input
                         name="address"
                         className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
@@ -199,7 +252,9 @@ export default function Index() {
                   </div>
 
                   <div>
-                    <span className="text-sm font-medium text-slate-700">Type de projet (sélectionnez tout ce qui s'applique)</span>
+                    <span className="text-sm font-medium text-slate-700">
+                      Type de projet (sélectionnez tout ce qui s'applique)
+                    </span>
                     <div className="mt-3 grid grid-cols-2 gap-2">
                       {[
                         "Pompe à chaleur",
@@ -208,7 +263,10 @@ export default function Index() {
                         "Chauffe-eau solaire",
                         "Borne de recharge",
                       ].map((t) => (
-                        <label key={t} className="flex items-center gap-2 text-sm">
+                        <label
+                          key={t}
+                          className="flex items-center gap-2 text-sm"
+                        >
                           <input
                             type="checkbox"
                             name="projectType"
@@ -222,7 +280,9 @@ export default function Index() {
                   </div>
 
                   <label className="flex flex-col">
-                    <span className="text-sm font-medium text-slate-700">Message (optionnel)</span>
+                    <span className="text-sm font-medium text-slate-700">
+                      Message (optionnel)
+                    </span>
                     <textarea
                       name="message"
                       rows={3}
@@ -247,13 +307,18 @@ export default function Index() {
                     {submitting ? "Envoi…" : "Être contacté"}
                   </button>
 
-                  {error && <div className="text-sm text-destructive">{error}</div>}
+                  {error && (
+                    <div className="text-sm text-destructive">{error}</div>
+                  )}
                 </form>
               ) : (
                 <div className="text-center py-8">
-                  <h3 className="text-2xl font-semibold text-slate-900">Merci !</h3>
+                  <h3 className="text-2xl font-semibold text-slate-900">
+                    Merci !
+                  </h3>
                   <p className="mt-3 text-slate-700">
-                    Votre demande a bien été envoyée. Un conseiller vous contactera sous 48 heures ouvrables.
+                    Votre demande a bien été envoyée. Un conseiller vous
+                    contactera sous 48 heures ouvrables.
                   </p>
                   <p className="mt-3 text-sm text-slate-600">
                     Vos données restent strictement confidentielles (RGPD).
@@ -266,32 +331,47 @@ export default function Index() {
 
         {/* ========== TRUST & BADGES ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Partenaires certifiés et de confiance</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            Partenaires certifiés et de confiance
+          </h2>
           <p className="text-slate-600 mb-8 max-w-3xl">
-            EcoNova Solutions travaille avec des professionnels certifiés et des partenaires reconnus pour garantir la qualité, la conformité et la fiabilité.
+            EcoNova Solutions travaille avec des professionnels certifiés et des
+            partenaires reconnus pour garantir la qualité, la conformité et la
+            fiabilité.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Partenaire certifié RGE</p>
+              <p className="font-semibold text-slate-900">
+                Partenaire certifié RGE
+              </p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Programmes de transition énergétique</p>
+              <p className="font-semibold text-slate-900">
+                Programmes de transition énergétique
+              </p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Partenaires d'installation de confiance</p>
+              <p className="font-semibold text-slate-900">
+                Partenaires d'installation de confiance
+              </p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Conforme aux normes nationales</p>
+              <p className="font-semibold text-slate-900">
+                Conforme aux normes nationales
+              </p>
             </div>
           </div>
           <p className="text-xs text-slate-600 mt-6">
-            Les certifications peuvent varier selon le type de projet et la région.
+            Les certifications peuvent varier selon le type de projet et la
+            région.
           </p>
         </section>
 
         {/* ========== FAQ ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Questions fréquemment posées</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Questions fréquemment posées
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
               {
@@ -319,7 +399,10 @@ export default function Index() {
                 a: "Nous utilisons des équipements de marques reconnues adaptés à chaque projet (pompes à chaleur, panneaux solaires, systèmes de stockage, etc.).",
               },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white border border-border rounded-lg p-5">
+              <div
+                key={idx}
+                className="bg-white border border-border rounded-lg p-5"
+              >
                 <h3 className="font-semibold text-slate-900">{item.q}</h3>
                 <p className="mt-2 text-sm text-slate-600">{item.a}</p>
               </div>
@@ -334,7 +417,11 @@ export default function Index() {
               Prêt à réduire vos coûts énergétiques ?
             </h2>
             <button
-              onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("lead-form")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="inline-flex items-center rounded-md bg-primary px-8 py-3 text-white font-semibold shadow hover:opacity-95"
             >
               Être contacté maintenant

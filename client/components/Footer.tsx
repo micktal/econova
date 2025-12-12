@@ -16,7 +16,8 @@ export default function Footer({ logoSrc }: { logoSrc?: string }) {
             <div className="h-16 w-16 bg-primary rounded-full mb-4" />
           )}
           <p className="text-sm text-slate-700">
-            EcoNova Solutions — Connecter les propriétaires avec des professionnels énergétiques certifiés
+            EcoNova Solutions — Connecter les propriétaires avec des
+            professionnels énergétiques certifiés
           </p>
           <p className="text-xs text-slate-600 mt-2">
             Vos données sont protégées et jamais vendues.

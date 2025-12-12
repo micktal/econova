@@ -42,7 +42,12 @@ export default function Header({ logoSrc }: { logoSrc?: string }) {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
               </svg>
             </button>
 
@@ -66,14 +71,21 @@ export default function Header({ logoSrc }: { logoSrc?: string }) {
             )}
           </div>
 
-          <a href="#aides" className="text-sm text-slate-700 hover:text-primary">
+          <a
+            href="#aides"
+            className="text-sm text-slate-700 hover:text-primary"
+          >
             Aides & financements
           </a>
           <a href="#faq" className="text-sm text-slate-700 hover:text-primary">
             FAQ
           </a>
           <button
-            onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document
+                .getElementById("lead-form")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="text-sm font-semibold bg-primary text-white px-4 py-2 rounded-md hover:opacity-95"
           >
             Recevoir mon étude
@@ -82,7 +94,11 @@ export default function Header({ logoSrc }: { logoSrc?: string }) {
 
         <div className="md:hidden">
           <button
-            onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document
+                .getElementById("lead-form")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="text-sm font-semibold bg-primary text-white px-3 py-2 rounded-md hover:opacity-95"
           >
             Étude

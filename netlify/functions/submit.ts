@@ -50,7 +50,6 @@ export const handler = async (event: any) => {
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
-
   } catch (err) {
     console.error("Submit error:", err);
     return {

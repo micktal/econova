@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  process.env.SUPABASE_ANON_KEY,
 );
 
 /* ===== Lead routing ===== */
@@ -13,7 +13,7 @@ const ROUTING_BY_PROJECT = {
   "Pompe à chaleur": "pac@econova.fr",
   "Panneaux solaires": "solar@econova.fr",
   "Chauffe-eau solaire": "solar@econova.fr",
-  "Isolation": "isolation@econova.fr",
+  Isolation: "isolation@econova.fr",
   "Borne de recharge": "ev@econova.fr",
 };
 
@@ -133,7 +133,6 @@ Sustainable Energy Experts
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
-
   } catch (err) {
     console.error("Submit error:", err);
     return {

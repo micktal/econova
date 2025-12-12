@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const LOGO_URL = "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
+const LOGO_URL =
+  "https://cdn.builder.io/api/v1/image/assets%2Fd93d9a0ec7824aa1ac4d890a1f90a2ec%2F95c0b0043b41421392e858a0557beec4?format=webp&width=800";
 
 export default function PompeAChaleur() {
   const [submitting, setSubmitting] = useState(false);
@@ -10,7 +11,8 @@ export default function PompeAChaleur() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "Pompe à chaleur — Réduisez vos factures de chauffage jusqu'à 60 %";
+    document.title =
+      "Pompe à chaleur — Réduisez vos factures de chauffage jusqu'à 60 %";
 
     const description =
       "Pompe à chaleur performante pour réduire vos factures jusqu'à 60%. Chauffage économique et écologique. Étude gratuite, aides financières, installateurs certifiés.";
@@ -75,17 +77,22 @@ export default function PompeAChaleur() {
             </h1>
 
             <h2 className="mt-6 text-xl text-slate-700 leading-relaxed">
-              Chauffage économique, écologique et durable.
-              Étude gratuite & vérification immédiate des aides disponibles.
+              Chauffage économique, écologique et durable. Étude gratuite &
+              vérification immédiate des aides disponibles.
             </h2>
 
             <p className="mt-4 text-sm text-slate-600">
-              ✓ Étude gratuite  •  ✓ Sans engagement  •  ✓ Installateurs partenaires certifiés
+              ✓ Étude gratuite • ✓ Sans engagement • ✓ Installateurs partenaires
+              certifiés
             </p>
 
             <div className="mt-8 flex gap-4">
               <button
-                onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .getElementById("lead-form")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="inline-flex items-center rounded-md bg-primary px-8 py-3 text-white font-semibold shadow hover:opacity-95"
               >
                 Être contacté pour mon projet de pompe à chaleur
@@ -96,28 +103,40 @@ export default function PompeAChaleur() {
 
         {/* ========== VALUE PROPOSITION ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Pourquoi choisir une pompe à chaleur ?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Pourquoi choisir une pompe à chaleur ?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Jusqu'à 60 % d'économies sur votre chauffage</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Jusqu'à 60 % d'économies sur votre chauffage
+              </h3>
               <p className="text-slate-600 text-sm">
-                Une PAC consomme très peu d'électricité pour produire de la chaleur.
+                Une PAC consomme très peu d'électricité pour produire de la
+                chaleur.
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Confort thermique toute l'année</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Confort thermique toute l'année
+              </h3>
               <p className="text-slate-600 text-sm">
-                Chauffage performant en hiver, rafraîchissement possible en été (selon modèle).
+                Chauffage performant en hiver, rafraîchissement possible en été
+                (selon modèle).
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Solution écologique et durable</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Solution écologique et durable
+              </h3>
               <p className="text-slate-600 text-sm">
                 Utilise les calories naturelles de l'air, de l'eau ou du sol.
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Aides financières importantes disponibles</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                ✓ Aides financières importantes disponibles
+              </h3>
               <p className="text-slate-600 text-sm">
                 MaPrimeRénov', CEE, aides locales selon votre situation.
               </p>
@@ -127,72 +146,102 @@ export default function PompeAChaleur() {
 
         {/* ========== TYPES OF HEAT PUMPS ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Quel type de pompe à chaleur pour votre logement ?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Quel type de pompe à chaleur pour votre logement ?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air / air</h3>
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">
+                Pompe à chaleur air / air
+              </h3>
               <p className="text-slate-600 text-sm">
                 Chauffage + climatisation, installation rapide.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air / eau</h3>
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">
+                Pompe à chaleur air / eau
+              </h3>
               <p className="text-slate-600 text-sm">
                 Alimente radiateurs ou plancher chauffant, très répandue.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur géothermique</h3>
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">
+                Pompe à chaleur géothermique
+              </h3>
               <p className="text-slate-600 text-sm">
                 Performance maximale, idéale pour projets globaux.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur hybride</h3>
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">
+                Pompe à chaleur hybride
+              </h3>
               <p className="text-slate-600 text-sm">
                 Combine PAC + chaudière existante pour plus de flexibilité.
               </p>
             </div>
           </div>
           <p className="mt-8 text-slate-600 max-w-2xl">
-            Un conseiller vous aide à identifier la solution la plus adaptée à votre logement.
+            Un conseiller vous aide à identifier la solution la plus adaptée à
+            votre logement.
           </p>
         </section>
 
         {/* ========== HOW IT WORKS ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Comment se déroule votre projet de pompe à chaleur ?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Comment se déroule votre projet de pompe à chaleur ?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl">
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="font-semibold text-white">Vous laissez vos coordonnées</p>
+              <p className="font-semibold text-white">
+                Vous laissez vos coordonnées
+              </p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="font-semibold text-white">Analyse de votre système de chauffage</p>
+              <p className="font-semibold text-white">
+                Analyse de votre système de chauffage
+              </p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="font-semibold text-white">Étude gratuite + aides financières</p>
+              <p className="font-semibold text-white">
+                Étude gratuite + aides financières
+              </p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="font-semibold text-white">Mise en relation avec installateur certifié</p>
+              <p className="font-semibold text-white">
+                Mise en relation avec installateur certifié
+              </p>
             </div>
           </div>
         </section>
 
         {/* ========== FORM SECTION INTRO ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Être rappelé pour une étude gratuite de pompe à chaleur</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+            Être rappelé pour une étude gratuite de pompe à chaleur
+          </h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-            Un conseiller vous contacte pour évaluer votre projet et vos économies potentielles.
+            Un conseiller vous contacte pour évaluer votre projet et vos
+            économies potentielles.
           </p>
 
           {/* FORM */}
           <div className="max-w-2xl">
             <div className="bg-white border border-border rounded-lg p-8 shadow">
               {!sent ? (
-                <form id="lead-form" onSubmit={handleSubmit} className="space-y-5">
+                <form
+                  id="lead-form"
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Nom complet *</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Nom complet *
+                      </span>
                       <input
                         name="name"
                         required
@@ -201,7 +250,9 @@ export default function PompeAChaleur() {
                     </label>
 
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Email *</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Email *
+                      </span>
                       <input
                         name="email"
                         type="email"
@@ -213,7 +264,9 @@ export default function PompeAChaleur() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Téléphone</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Téléphone
+                      </span>
                       <input
                         name="phone"
                         className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
@@ -221,7 +274,9 @@ export default function PompeAChaleur() {
                     </label>
 
                     <label className="flex flex-col">
-                      <span className="text-sm font-medium text-slate-700">Adresse</span>
+                      <span className="text-sm font-medium text-slate-700">
+                        Adresse
+                      </span>
                       <input
                         name="address"
                         className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
@@ -230,7 +285,9 @@ export default function PompeAChaleur() {
                   </div>
 
                   <label className="flex flex-col">
-                    <span className="text-sm font-medium text-slate-700">Message (optionnel)</span>
+                    <span className="text-sm font-medium text-slate-700">
+                      Message (optionnel)
+                    </span>
                     <textarea
                       name="message"
                       rows={3}
@@ -249,16 +306,23 @@ export default function PompeAChaleur() {
                     disabled={submitting}
                     className="w-full rounded-md bg-primary px-4 py-3 text-white font-semibold hover:opacity-95"
                   >
-                    {submitting ? "Envoi…" : "Être contacté pour ma pompe à chaleur"}
+                    {submitting
+                      ? "Envoi…"
+                      : "Être contacté pour ma pompe à chaleur"}
                   </button>
 
-                  {error && <div className="text-sm text-destructive">{error}</div>}
+                  {error && (
+                    <div className="text-sm text-destructive">{error}</div>
+                  )}
                 </form>
               ) : (
                 <div className="text-center py-8">
-                  <h3 className="text-2xl font-semibold text-slate-900">Merci !</h3>
+                  <h3 className="text-2xl font-semibold text-slate-900">
+                    Merci !
+                  </h3>
                   <p className="mt-3 text-slate-700">
-                    Votre demande a bien été envoyée. Un expert en pompes à chaleur vous contactera sous 48 heures ouvrables.
+                    Votre demande a bien été envoyée. Un expert en pompes à
+                    chaleur vous contactera sous 48 heures ouvrables.
                   </p>
                   <p className="mt-3 text-sm text-slate-600">
                     Vos données restent strictement confidentielles (RGPD).
@@ -271,22 +335,34 @@ export default function PompeAChaleur() {
 
         {/* ========== TRUST & SOCIAL PROOF ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Une installation réalisée par des professionnels certifiés</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">
+            Une installation réalisée par des professionnels certifiés
+          </h2>
           <p className="text-slate-600 mb-8 max-w-3xl">
-            EcoNova Solutions travaille avec des installateurs spécialisés dans les pompes à chaleur, sélectionnés pour leur sérieux et leur conformité aux normes en vigueur.
+            EcoNova Solutions travaille avec des installateurs spécialisés dans
+            les pompes à chaleur, sélectionnés pour leur sérieux et leur
+            conformité aux normes en vigueur.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Installateurs certifiés RGE</p>
+              <p className="font-semibold text-slate-900">
+                Installateurs certifiés RGE
+              </p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Équipements performants et reconnus</p>
+              <p className="font-semibold text-slate-900">
+                Équipements performants et reconnus
+              </p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Conformité normes énergétiques</p>
+              <p className="font-semibold text-slate-900">
+                Conformité normes énergétiques
+              </p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Accompagnement administratif aides</p>
+              <p className="font-semibold text-slate-900">
+                Accompagnement administratif aides
+              </p>
             </div>
           </div>
           <p className="text-xs text-slate-600 mt-6">
@@ -296,7 +372,9 @@ export default function PompeAChaleur() {
 
         {/* ========== FAQ ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Questions fréquentes sur les pompes à chaleur</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">
+            Questions fréquentes sur les pompes à chaleur
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
               {
@@ -316,7 +394,10 @@ export default function PompeAChaleur() {
                 a: "Oui, dans la plupart des cas.",
               },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white border border-border rounded-lg p-5">
+              <div
+                key={idx}
+                className="bg-white border border-border rounded-lg p-5"
+              >
                 <h3 className="font-semibold text-slate-900">{item.q}</h3>
                 <p className="mt-2 text-sm text-slate-600">{item.a}</p>
               </div>
