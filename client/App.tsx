@@ -12,6 +12,8 @@ import PanneauxSolaires from "./pages/PanneauxSolaires";
 import Isolation from "./pages/Isolation";
 import NotFound from "./pages/NotFound";
 
+let isInitialized = false;
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,16 +35,18 @@ const App = () => (
   </QueryClientProvider>
 );
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    const rootElement = document.getElementById("root");
-    if (rootElement && !rootElement.innerHTML) {
-      createRoot(rootElement).render(<App />);
-    }
-  });
-} else {
+const initializeApp = () => {
+  if (isInitialized) return;
+
   const rootElement = document.getElementById("root");
-  if (rootElement && !rootElement.innerHTML) {
+  if (rootElement) {
+    isInitialized = true;
     createRoot(rootElement).render(<App />);
   }
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+  initializeApp();
 }
