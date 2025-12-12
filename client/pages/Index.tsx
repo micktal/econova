@@ -56,13 +56,13 @@ export default function Index() {
       });
 
       if (!res.ok) {
-        throw new Error("Submission failed. Please try again.");
+        throw new Error("Erreur lors de l'envoi. Veuillez réessayer.");
       }
 
       setSent(true);
       form.reset();
     } catch (err: any) {
-      setError(err.message || "Network error. Please try again.");
+      setError(err.message || "Erreur réseau. Veuillez réessayer.");
     } finally {
       setSubmitting(false);
     }
