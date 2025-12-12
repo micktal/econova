@@ -13,8 +13,6 @@ import Isolation from "./pages/Isolation";
 import BorneRecharge from "./pages/BorneRecharge";
 import NotFound from "./pages/NotFound";
 
-let isInitialized = false;
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,14 +35,18 @@ const App = () => (
   </QueryClientProvider>
 );
 
-const initializeApp = () => {
-  if (isInitialized) return;
+let root: any = null;
 
+const initializeApp = () => {
   const rootElement = document.getElementById("root");
-  if (rootElement) {
-    isInitialized = true;
-    createRoot(rootElement).render(<App />);
+  if (!rootElement) return;
+
+  // Check if root already exists (prevents re-creation on hot reload)
+  if (!root) {
+    root = createRoot(rootElement);
   }
+
+  root.render(<App />);
 };
 
 if (document.readyState === 'loading') {
