@@ -35,18 +35,16 @@ const App = () => (
   </QueryClientProvider>
 );
 
-let root: any = null;
-
 const initializeApp = () => {
   const rootElement = document.getElementById("root");
   if (!rootElement) return;
 
-  // Check if root already exists (prevents re-creation on hot reload)
-  if (!root) {
-    root = createRoot(rootElement);
+  // Store root reference on element to persist across HMR
+  if (!(rootElement as any).__reactRoot) {
+    (rootElement as any).__reactRoot = createRoot(rootElement);
   }
 
-  root.render(<App />);
+  (rootElement as any).__reactRoot.render(<App />);
 };
 
 if (document.readyState === 'loading') {
