@@ -176,7 +176,6 @@ export default function Isolation() {
               <p className="font-semibold text-slate-900">Étude gratuite + aides</p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">4️⃣</p>
               <p className="font-semibold text-slate-900">Mise en relation professionnel</p>
             </div>
           </div>
