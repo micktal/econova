@@ -10,10 +10,10 @@ export default function PompeAChaleur() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "Pompe à chaleur — Réduisez vos factures de chauffage durablement";
+    document.title = "Pompe à chaleur — Réduisez vos factures de chauffage jusqu'à 60 %";
 
     const description =
-      "Pompe à chaleur performante et écologique. Réduisez vos factures de chauffage jusqu'à 60%. Étude gratuite, aides financières incluses, installateurs certifiés.";
+      "Pompe à chaleur performante pour réduire vos factures jusqu'à 60%. Chauffage économique et écologique. Étude gratuite, aides financières, installateurs certifiés.";
 
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -71,16 +71,16 @@ export default function PompeAChaleur() {
         <section className="py-12 md:py-20">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight">
-              Pompe à chaleur : réduisez vos factures de chauffage durablement
+              Pompe à chaleur : réduisez vos factures de chauffage jusqu'à 60 %
             </h1>
 
             <h2 className="mt-6 text-xl text-slate-700 leading-relaxed">
-              Passez à une solution de chauffage performante, écologique et économique.
-              Recevez l'avis d'un expert et vérifiez votre éligibilité aux aides.
+              Chauffage économique, écologique et durable.
+              Étude gratuite & vérification immédiate des aides disponibles.
             </h2>
 
             <p className="mt-4 text-sm text-slate-600">
-              ✓ Étude gratuite  •  ✓ Sans engagement  •  ✓ Partenaires certifiés
+              ✓ Étude gratuite  •  ✓ Sans engagement  •  ✓ Installateurs partenaires certifiés
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -88,7 +88,7 @@ export default function PompeAChaleur() {
                 onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center rounded-md bg-primary px-8 py-3 text-white font-semibold shadow hover:opacity-95"
               >
-                Être contacté par un conseiller
+                Être contacté pour mon projet de pompe à chaleur
               </button>
             </div>
           </div>
@@ -97,23 +97,29 @@ export default function PompeAChaleur() {
         {/* ========== VALUE PROPOSITION ========== */}
         <section className="py-12 md:py-16 border-t">
           <h2 className="text-3xl font-bold text-slate-900 mb-10">Pourquoi choisir une pompe à chaleur ?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Jusqu'à 60 % d'économies sur le chauffage</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Jusqu'à 60 % d'économies sur votre chauffage</h3>
               <p className="text-slate-600 text-sm">
-                La pompe à chaleur utilise les calories de l'air ou du sol pour chauffer efficacement votre logement.
+                Une PAC consomme très peu d'électricité pour produire de la chaleur.
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Une solution écologique et durable</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Confort thermique toute l'année</h3>
               <p className="text-slate-600 text-sm">
-                Réduction significative des émissions de CO₂ et meilleure performance énergétique.
+                Chauffage performant en hiver, rafraîchissement possible en été (selon modèle).
               </p>
             </div>
             <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Compatible avec les aides financières</h3>
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Solution écologique et durable</h3>
               <p className="text-slate-600 text-sm">
-                MaPrimeRénov', primes énergie et autres dispositifs selon votre situation.
+                Utilise les calories naturelles de l'air, de l'eau ou du sol.
+              </p>
+            </div>
+            <div className="bg-slate-50 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">✓ Aides financières importantes disponibles</h3>
+              <p className="text-slate-600 text-sm">
+                MaPrimeRénov', CEE, aides locales selon votre situation.
               </p>
             </div>
           </div>
@@ -122,23 +128,29 @@ export default function PompeAChaleur() {
         {/* ========== TYPES OF HEAT PUMPS ========== */}
         <section className="py-12 md:py-16 border-t">
           <h2 className="text-3xl font-bold text-slate-900 mb-10">Quel type de pompe à chaleur pour votre logement ?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air/air</h3>
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air / air</h3>
               <p className="text-slate-600 text-sm">
-                Idéale pour le chauffage et la climatisation des logements bien isolés.
+                👉 Chauffage + climatisation, installation rapide.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air/eau</h3>
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur air / eau</h3>
               <p className="text-slate-600 text-sm">
-                Remplace ou complète une chaudière traditionnelle pour le chauffage et l'eau chaude.
+                👉 Alimente radiateurs ou plancher chauffant, très répandue.
+              </p>
+            </div>
+            <div className="bg-white border border-border rounded-lg p-6">
+              <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur géothermique</h3>
+              <p className="text-slate-600 text-sm">
+                👉 Performance maximale, idéale pour projets globaux.
               </p>
             </div>
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="font-semibold text-slate-900 text-lg mb-2">Pompe à chaleur hybride</h3>
               <p className="text-slate-600 text-sm">
-                Combine pompe à chaleur et chaudière pour un confort optimal.
+                👉 Combine PAC + chaudière existante pour plus de flexibilité.
               </p>
             </div>
           </div>
@@ -149,7 +161,7 @@ export default function PompeAChaleur() {
 
         {/* ========== HOW IT WORKS ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Comment se déroule votre projet ?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">Comment se déroule votre projet de pompe à chaleur ?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl">
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
               <p className="text-2xl font-bold text-primary mb-2">1️⃣</p>
@@ -157,24 +169,24 @@ export default function PompeAChaleur() {
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
               <p className="text-2xl font-bold text-primary mb-2">2️⃣</p>
-              <p className="font-semibold text-slate-900">Un conseiller vous contacte</p>
+              <p className="font-semibold text-slate-900">Analyse de votre système de chauffage</p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
               <p className="text-2xl font-bold text-primary mb-2">3️⃣</p>
-              <p className="font-semibold text-slate-900">Étude gratuite d'éligibilité</p>
+              <p className="font-semibold text-slate-900">Étude gratuite + aides financières</p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
               <p className="text-2xl font-bold text-primary mb-2">4️⃣</p>
-              <p className="font-semibold text-slate-900">Mise en relation avec installateur</p>
+              <p className="font-semibold text-slate-900">Mise en relation avec installateur certifié</p>
             </div>
           </div>
         </section>
 
         {/* ========== FORM SECTION INTRO ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Être rappelé pour une étude gratuite</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Être rappelé pour une étude gratuite de pompe à chaleur</h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl">
-            Un expert vous contacte pour analyser votre situation et vous conseiller la meilleure solution.
+            Un conseiller vous contacte pour évaluer votre projet et vos économies potentielles.
           </p>
 
           {/* FORM */}
@@ -261,24 +273,24 @@ export default function PompeAChaleur() {
           </div>
         </section>
 
-        {/* ========== TRUST & BADGES ========== */}
+        {/* ========== TRUST & SOCIAL PROOF ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Des partenaires certifiés pour votre installation</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Une installation réalisée par des professionnels certifiés</h2>
           <p className="text-slate-600 mb-8 max-w-3xl">
-            EcoNova Solutions collabore exclusivement avec des professionnels certifiés pour garantir sécurité, performance et conformité.
+            EcoNova Solutions travaille avec des installateurs spécialisés dans les pompes à chaleur, sélectionnés pour leur sérieux et leur conformité aux normes en vigueur.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Partenaires certifiés RGE</p>
+              <p className="font-semibold text-slate-900">Installateurs certifiés RGE</p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Conformité réglementaire</p>
+              <p className="font-semibold text-slate-900">Équipements performants et reconnus</p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Accompagnement aides financières</p>
+              <p className="font-semibold text-slate-900">Conformité normes énergétiques</p>
             </div>
             <div className="border border-border rounded-lg p-4 text-center">
-              <p className="font-semibold text-slate-900">Installateurs qualifiés</p>
+              <p className="font-semibold text-slate-900">Accompagnement administratif aides</p>
             </div>
           </div>
           <p className="text-xs text-slate-600 mt-6">
@@ -288,24 +300,24 @@ export default function PompeAChaleur() {
 
         {/* ========== FAQ ========== */}
         <section className="py-12 md:py-16 border-t">
-          <h2 className="text-3xl font-bold text-slate-900 mb-10">Questions fréquentes sur la pompe à chaleur</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-10">Questions fréquentes sur les pompes à chaleur</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
               {
-                q: "Une pompe à chaleur est-elle adaptée à ma maison ?",
-                a: "Cela dépend de votre logement, de son isolation et de votre installation actuelle. L'étude gratuite permet de le vérifier.",
+                q: "Suis-je éligible à une pompe à chaleur ?",
+                a: "La majorité des maisons individuelles sont éligibles après étude.",
               },
               {
-                q: "Combien coûte une pompe à chaleur ?",
-                a: "Le coût varie selon le modèle et la configuration, mais les aides peuvent réduire fortement l'investissement.",
+                q: "Les aides sont-elles vraiment accessibles ?",
+                a: "Oui, plusieurs aides sont cumulables selon votre situation.",
               },
               {
-                q: "Suis-je obligé de continuer après l'étude ?",
-                a: "Non. L'étude est gratuite et sans engagement.",
+                q: "Les travaux sont-ils longs ?",
+                a: "L'installation dure généralement entre 1 et 3 jours.",
               },
               {
-                q: "Qui réalise l'installation ?",
-                a: "Des installateurs partenaires certifiés sélectionnés selon votre projet.",
+                q: "La pompe à chaleur remplace-t-elle ma chaudière ?",
+                a: "Oui, dans la plupart des cas.",
               },
             ].map((item, idx) => (
               <div key={idx} className="bg-white border border-border rounded-lg p-5">
