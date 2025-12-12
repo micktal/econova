@@ -33,8 +33,16 @@ const App = () => (
   </QueryClientProvider>
 );
 
-const rootElement = document.getElementById("root");
-if (rootElement) {
-  const root = createRoot(rootElement);
-  root.render(<App />);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const rootElement = document.getElementById("root");
+    if (rootElement && !rootElement.innerHTML) {
+      createRoot(rootElement).render(<App />);
+    }
+  });
+} else {
+  const rootElement = document.getElementById("root");
+  if (rootElement && !rootElement.innerHTML) {
+    createRoot(rootElement).render(<App />);
+  }
 }
