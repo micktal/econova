@@ -232,7 +232,7 @@ export default function Index() {
 
                   <div className="bg-slate-50 p-4 rounded-md">
                     <p className="text-xs text-slate-600">
-                      🔒 Vos informations sont confidentielles et conformes au RGPD
+                      Vos informations sont confidentielles et conformes au RGPD
                     </p>
                     <p className="text-xs text-slate-600 mt-1">
                       📞 Pas de spam — un seul conseiller vous contactera
@@ -256,7 +256,7 @@ export default function Index() {
                     Votre demande a bien été envoyée. Un conseiller vous contactera sous 48 heures ouvrables.
                   </p>
                   <p className="mt-3 text-sm text-slate-600">
-                    🔒 Vos données restent strictement confidentielles (RGPD).
+                    Vos données restent strictement confidentielles (RGPD).
                   </p>
                 </div>
               )}

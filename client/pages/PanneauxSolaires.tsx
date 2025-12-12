@@ -234,7 +234,7 @@ export default function PanneauxSolaires() {
 
                   <div className="bg-slate-50 p-4 rounded-md">
                     <p className="text-xs text-slate-600">
-                      🔒 Données confidentielles – Aucun démarchage abusif
+                      Données confidentielles – Aucun démarchage abusif
                     </p>
                   </div>
 
@@ -255,7 +255,7 @@ export default function PanneauxSolaires() {
                     Votre demande a bien été envoyée. Un expert en énergie solaire vous contactera sous 48 heures ouvrables.
                   </p>
                   <p className="mt-3 text-sm text-slate-600">
-                    🔒 Vos données restent strictement confidentielles (RGPD).
+                    Vos données restent strictement confidentielles (RGPD).
                   </p>
                 </div>
               )}

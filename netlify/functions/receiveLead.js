@@ -103,7 +103,7 @@ Prochaine étape
 Un conseiller EcoNova Solutions vous contactera sous 48h ouvrées
 afin de préciser votre projet et vérifier votre éligibilité aux aides.
 
-🔒 Vos données restent strictement confidentielles (RGPD).
+Vos données restent strictement confidentielles (RGPD).
 Elles ne sont jamais revendues.
 
 À très bientôt,
