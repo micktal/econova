@@ -13,7 +13,7 @@ export default function Header({ logoSrc }: { logoSrc?: string }) {
               className="h-16 w-auto"
             />
           ) : (
-            <div className="h-14 w-14 rounded-full bg-primary" />
+            <div className="h-30 w-30 rounded-full bg-primary" />
           )}
         </Link>
 
