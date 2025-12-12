@@ -11,10 +11,10 @@ export default function Index() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = "EcoNova Solutions — Sustainable Energy Solutions";
+    document.title = "EcoNova Solutions — Étude gratuite & solutions énergétiques";
 
     const description =
-      "EcoNova Solutions provides tailor-made sustainable energy solutions. Get contacted by an expert advisor to discuss heat pumps, solar panels, insulation, and EV charging.";
+      "EcoNova Solutions — Étude gratuite pour solutions énergétiques durables : pompes à chaleur, panneaux solaires, isolation, bornes de recharge. Recevez une étude personnalisée.";
 
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
@@ -81,9 +81,7 @@ export default function Index() {
             </h1>
 
             <p className="mt-4 text-lg text-slate-700 max-w-xl">
-              Sustainable, tailor-made energy solutions.
-              Leave your details and get contacted by one of our expert advisors
-              to discuss your project.
+              Solutions énergétiques durables, installations sur-mesure et aides disponibles. Recevez une étude gratuite et personnalisée pour optimiser votre consommation et réduire vos factures.
             </p>
 
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg">
@@ -92,7 +90,7 @@ export default function Index() {
                   ✓
                 </span>
                 <span className="text-slate-700">
-                  Free initial assessment
+                  Audit gratuit et sans engagement
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -100,7 +98,7 @@ export default function Index() {
                   ✓
                 </span>
                 <span className="text-slate-700">
-                  Financial aid & incentives available
+                  Financement et aides disponibles
                 </span>
               </li>
             </ul>
@@ -114,7 +112,7 @@ export default function Index() {
                 }
                 className="inline-flex items-center rounded-md bg-primary px-6 py-3 text-white font-semibold shadow hover:opacity-95"
               >
-                Get contacted by an advisor
+                Recevoir mon étude gratuite maintenant
               </button>
             </div>
           </div>
@@ -131,7 +129,7 @@ export default function Index() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label className="flex flex-col">
                       <span className="text-sm font-medium text-slate-700">
-                        Full name
+                        Nom complet
                       </span>
                       <input
                         name="name"
@@ -156,7 +154,7 @@ export default function Index() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label className="flex flex-col">
                       <span className="text-sm font-medium text-slate-700">
-                        Phone
+                        Téléphone
                       </span>
                       <input
                         name="phone"
@@ -166,7 +164,7 @@ export default function Index() {
 
                     <label className="flex flex-col">
                       <span className="text-sm font-medium text-slate-700">
-                        Address
+                        Adresse
                       </span>
                       <input
                         name="address"
@@ -177,16 +175,16 @@ export default function Index() {
 
                   <div>
                     <span className="text-sm font-medium text-slate-700">
-                      Project type (select all that apply)
+                      Type de projet (sélectionnez tous les applicables)
                     </span>
                     <div className="mt-2 grid grid-cols-2 gap-2">
                       {[
-                        "Heat pump",
-                        "Solar panels",
-                        "Insulation",
-                        "Solar water heater",
-                        "EV charging station",
-                        "Other",
+                        "Pompe à chaleur",
+                        "Panneaux solaires",
+                        "Isolation",
+                        "Chauffe-eau solaire",
+                        "Borne de recharge",
+                        "Autre",
                       ].map((t) => (
                         <label
                           key={t}
@@ -206,7 +204,7 @@ export default function Index() {
 
                   <label className="flex flex-col">
                     <span className="text-sm font-medium text-slate-700">
-                      Message (optional)
+                      Message (optionnel)
                     </span>
                     <textarea
                       name="message"
@@ -216,7 +214,7 @@ export default function Index() {
                   </label>
 
                   <p className="text-sm text-slate-600">
-                    Your data is strictly confidential and GDPR compliant.
+                    Vos données restent strictement confidentielles (RGPD).
                   </p>
 
                   <button
@@ -224,7 +222,7 @@ export default function Index() {
                     disabled={submitting}
                     className="w-full rounded-md bg-primary px-4 py-2 text-white font-semibold"
                   >
-                    {submitting ? "Sending…" : "Get contacted"}
+                    {submitting ? "Envoi…" : "Recevoir mon étude gratuite maintenant"}
                   </button>
 
                   {error && (
@@ -233,18 +231,57 @@ export default function Index() {
                 </form>
               ) : (
                 <div className="text-center">
-                  <h3 className="text-xl font-semibold">Thank you</h3>
+                  <h3 className="text-xl font-semibold">Merci !</h3>
                   <p className="mt-2 text-slate-700">
-                    Your request has been successfully sent.
-                    One of our advisors will contact you shortly.
+                    Votre demande a bien été envoyée. Nous reviendrons vers vous sous 48h ouvrés.
+                  </p>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Vos données restent strictement confidentielles (RGPD).
                   </p>
                 </div>
               )}
             </div>
 
             <p className="mt-4 text-xs text-slate-500">
-              We assist you with available incentives, subsidies, and financing.
+              Nous vous accompagnons pour les aides et financement disponibles.
             </p>
+          </div>
+        </section>
+
+        <section className="mt-20">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Foire aux questions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                q: "Comment se déroule l'étude gratuite ?",
+                a: "Un conseiller vous contacte pour préciser votre projet, puis nous réalisons un diagnostic complet et vous envoyons une proposition détaillée.",
+              },
+              {
+                q: "Quels sont les délais d'installation ?",
+                a: "Les délais varient selon le projet et les autorisations nécessaires, généralement entre 2 et 8 semaines après validation du devis.",
+              },
+              {
+                q: "Est-ce que je suis éligible aux aides ?",
+                a: "Nous évaluons votre éligibilité lors de l'étude et vous accompagnons dans les démarches pour obtenir les aides disponibles.",
+              },
+              {
+                q: "Que se passe-t-il après l'envoi du formulaire ?",
+                a: "Un conseiller vous contacte dans les 48h pour fixer un rendez-vous et préciser les informations nécessaires pour l'étude.",
+              },
+              {
+                q: "L'entreprise est-elle certifiée ?",
+                a: "Oui, EcoNova Solutions travaille avec des partenaires certifiés RGE et des installateurs qualifiés pour garantir la qualité.",
+              },
+              {
+                q: "Quels produits sont utilisés ?",
+                a: "Nous utilisons des équipements de marques reconnues et adaptés à chaque projet (pompes à chaleur, panneaux solaires, systèmes de stockage, etc.).",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white border border-border rounded-md p-5">
+                <h3 className="font-semibold text-slate-800">{item.q}</h3>
+                <p className="mt-2 text-sm text-slate-600">{item.a}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>
