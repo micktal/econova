@@ -35,20 +35,15 @@ const App = () => (
   </QueryClientProvider>
 );
 
-const initializeApp = () => {
-  const rootElement = document.getElementById("root");
-  if (!rootElement) return;
+const rootElement = document.getElementById("root");
 
-  // Store root reference on element to persist across HMR
-  if (!(rootElement as any).__reactRoot) {
-    (rootElement as any).__reactRoot = createRoot(rootElement);
-  }
+// Only initialize once per page load, not on HMR updates
+if (rootElement && !(rootElement as any).__reactRootInitialized) {
+  (rootElement as any).__reactRootInitialized = true;
+  (rootElement as any).__reactRoot = createRoot(rootElement);
+}
 
-  (rootElement as any).__reactRoot.render(<App />);
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeApp);
-} else {
-  initializeApp();
+// Always render latest App component (supports HMR)
+if (rootElement) {
+  (rootElement as any).__reactRoot?.render(<App />);
 }
