@@ -3,8 +3,12 @@
   "private": true,
   "type": "module",
   "pkg": {
-    "assets": ["dist/spa/*"],
-    "scripts": ["dist/server/**/*.js"]
+    "assets": [
+      "dist/spa/*"
+    ],
+    "scripts": [
+      "dist/server/**/*.js"
+    ]
   },
   "scripts": {
     "dev": "vite",
@@ -93,5 +97,6 @@
     "vaul": "^1.1.2",
     "vite": "^7.1.2",
     "vitest": "^3.2.4"
-  }
+  },
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }
