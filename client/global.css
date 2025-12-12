@@ -8,7 +8,7 @@
 @layer base {
   /**
    * EcoNova theme
-  */
+   */
   :root {
     /* Primary: Eco green */
     --background: 140 30% 98%;
@@ -42,19 +42,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 100%;
-
     --sidebar-foreground: 210 14% 12%;
-
     --sidebar-primary: 145 60% 30%;
-
     --sidebar-primary-foreground: 0 0% 100%;
-
     --sidebar-accent: 140 20% 95.9%;
-
     --sidebar-accent-foreground: 210 14% 12%;
-
     --sidebar-border: 210 12% 94%;
-
     --sidebar-ring: 145 60% 30%;
   }
 
@@ -86,6 +79,7 @@
     --border: 210 20% 20%;
     --input: 210 20% 20%;
     --ring: 145 60% 45%;
+
     --sidebar-background: 210 20% 12%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 145 60% 30%;
@@ -98,8 +92,9 @@
 }
 
 @layer base {
+  /* FIX: Tailwind cannot @apply border-border → use CSS var */
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   html,
@@ -118,13 +113,17 @@
       Roboto,
       "Helvetica Neue",
       Arial;
-    @apply bg-background text-foreground;
+
+    /* FIX: Tailwind cannot @apply bg-background → use CSS var */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   a {
-    @apply text-primary;
+    color: hsl(var(--primary));
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
