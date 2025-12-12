@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import PompeAChaleur from "./pages/PompeAChaleur";
 import PanneauxSolaires from "./pages/PanneauxSolaires";
+import Isolation from "./pages/Isolation";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/pompe-a-chaleur" element={<PompeAChaleur />} />
           <Route path="/panneaux-solaires" element={<PanneauxSolaires />} />
+          <Route path="/isolation" element={<Isolation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
