@@ -164,15 +164,12 @@ export default function Isolation() {
           <h2 className="text-3xl font-bold text-slate-900 mb-10">Comment se déroule votre projet d'isolation ?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl">
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">1️⃣</p>
               <p className="font-semibold text-slate-900">Vous laissez vos coordonnées</p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">2️⃣</p>
               <p className="font-semibold text-slate-900">Analyse de votre logement</p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">3️⃣</p>
               <p className="font-semibold text-slate-900">Étude gratuite + aides</p>
             </div>
             <div className="bg-primary bg-opacity-10 border border-primary border-opacity-20 rounded-lg p-6 text-center">
